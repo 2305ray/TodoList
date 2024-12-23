@@ -1,0 +1,13 @@
+.appContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.tasksHeader {
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem;
+    width: 100%;
+    
+}

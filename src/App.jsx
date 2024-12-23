@@ -1,24 +1,22 @@
 import styles from './App.module.css';
 import { Header } from './Header';
-import {CriarTarefa} from './Criar'
-
+import { CriarTarefa } from './Criar';
+import { Tasks } from './Tasks';
 import './global.css'
 
-function App() {
-
+export function App() {
   return (
     <div>
-
+    <div className={styles.appContainer}>
       <Header />
-
-      <div className={styles.wrapper}>
-        <section>
-          <CriarTarefa />
-        </section>
-      </div>
-
-</div>
-  )
+      <CriarTarefa />
+      <Tasks />
+    </div>
+    <div>
+      
+    </div>
+    </div>
+  );
 }
 
 export default App

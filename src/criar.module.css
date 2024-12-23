@@ -1,3 +1,57 @@
-.form {
+
+form {
     width: 100%;
+    display: flex;
+    margin-top: -2rem;
+    justify-content: center;
+   
+   
 }
+
+.form textarea {
+    display: flex;
+    width: 60%;
+    height: 3.375rem;
+    resize: none; /* faz com que n altere o tamanho*/
+    border-radius: 8px;
+    text-align: left;
+    padding: 1rem;
+    color: var(--gray-300);
+    background: var(--gray-500);
+    border: 0;
+    font-size: 0.875rem;
+    
+    
+}
+
+.ButtonCriar[type=submit] {
+    display: flex;
+    width: 5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    background: var(--blue-dark);
+    border: 0;
+    color: var(--gray-100);
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    flex-shrink: 0; /* Garante que o botão não encolha */
+}
+
+.ButtonCriar[type=submit]:hover {
+    background: var(--blue);
+    cursor: pointer;
+}
+
+/* @media (max-width: 768px) {
+    .form textarea {
+        width: 20rem;
+    }
+}
+@media (max-width: 640px) {
+
+}
+*/
+     
