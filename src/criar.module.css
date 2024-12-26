@@ -1,4 +1,11 @@
-
+.settingsAll {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
 form {
     width: 100%;
     display: flex;
@@ -7,6 +14,7 @@ form {
    
    
 }
+
 
 .form textarea {
     display: flex;
@@ -44,6 +52,74 @@ form {
     background: var(--blue);
     cursor: pointer;
 }
+
+
+
+/*  TASKS*/
+.tasksHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Garante que os itens fiquem alinhados verticalmente */
+    margin-top: 3rem;
+    width: 65%;
+    
+    
+}
+
+.colorBlue {
+    color: var(--blue);
+    font-weight:bold;
+    font-size: 0.8rem;
+}
+
+.colorPurple {
+    color: var(--purple-dark);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.line {
+    border-bottom: 1px solid var(--gray-400);
+    width: 66%;
+    margin: 1.5rem;
+}
+
+.dontHaveTasks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 2.5rem;
+    opacity: 0.7;
+    font-size: 0.875rem;
+}
+
+.boldParagraph{
+    font-weight: bold;
+    color: var(--gray-200);
+    opacity: 0.7;
+}
+
+.dontHaveTasks svg{
+    margin-bottom: 0.7rem;
+    color: var(--gray-400);
+}
+
+span {
+    margin-left: 0.875rem;
+    background: var(--gray-400);
+    border-radius: 7px;
+    padding: 0.2rem 0.4rem;
+    color: var(--gray-200);
+    font-weight: bold;
+}
+.counter{
+    opacity: 0.8;
+}
+
+
+
 
 /* @media (max-width: 768px) {
     .form textarea {

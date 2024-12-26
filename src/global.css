@@ -25,14 +25,15 @@
 }
 
 body {
-    background: var(--gray-400);
+    background: var(--gray-600);
     -webkit-font-smoothing: antialiased;
     color: var(--gray-300);
+    
 }
 
 body, input, textarea, button { /*por padrão eles n recebem a padronização */
     font-family: 'inter', sans-serif; /* padrão do sistemas */
-    font-weight: regula;
+    font-weight: normal;
     font-size: 0.8rem;
 }
 

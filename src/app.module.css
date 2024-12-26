@@ -1,1 +1,26 @@
 
+    .containerAlign {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+
+
+
+/* Para o Header */
+.header {
+    display: block;  /* Garante que o Header seja exibido corretamente */
+     /* Exemplo de espaçamento entre o Header e o próximo componente */
+  }
+  
+  /* Para CriarTarefa */
+  .criarTarefa {
+    display: block;  /* Garante que o CriarTarefa não afete o layout global */
+  }
+  
+  
+.criarTarefa, .tasks {
+    flex: 1;                     /* Faz com que ambos os componentes ocupem a mesma proporção de espaço */
+    margin: 0 10px;              /* Espaçamento entre os componentes */
+  }

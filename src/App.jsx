@@ -1,21 +1,18 @@
 import styles from './App.module.css';
 import { Header } from './Header';
 import { CriarTarefa } from './Criar';
-import { Tasks } from './Tasks';
 import './global.css'
 
 export function App() {
   return (
     <div>
-    <div className={styles.appContainer}>
-      <Header />
-      <CriarTarefa />
-      <Tasks />
+      <div className={styles.appContainer}>
+        <Header className={styles.header}/>
+        <CriarTarefa className={styles.criarTarefa}/>
+      </div>
     </div>
-    <div>
       
-    </div>
-    </div>
+    
   );
 }
 
