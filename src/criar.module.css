@@ -120,6 +120,90 @@ span {
 
 
 
+.containerTasks {
+    flex-direction: column;
+    display: flex;
+}
+
+.taskContent{
+display: flex;
+background: var(--gray-);
+cursor: pointer;
+margin-top: 1rem;
+border: 0.5px solid var(--gray-400);
+width: 40rem;
+height: 4rem;
+background: var(--gray-500);
+padding: 1rem ; 
+border-radius: 8px;
+justify-content: space-between;
+  
+}
+
+.taskContent span{
+    
+    background: none;
+    color: var(--gray-200);
+    
+}
+
+.taskContent input[type='checkbox'] {
+    -webkit-appearance: none;  /* Remove o estilo padrão no Chrome/Safari */
+    -moz-appearance: none;     /* Remove o estilo padrão no Firefox */
+    appearance: none;          /* Remove o estilo padrão no resto dos navegadores */
+    
+    margin-right: 1rem; /* Adiciona um espaço à direita do checkbox */
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--blue); /* Cor da borda */
+    border-radius: 10px;          /* Forma do checkbox */
+    background-color: var(--gray-500);     /* Cor de fundo */
+    cursor: pointer;
+}
+
+.taskContent input[type='checkbox']:hover {
+    background: var(--gray-400);
+}
+
+.taskContent input[type="checkbox"]:checked {
+    background: var(--purple-dark);
+    border-color:var(--purple-dark);
+}
+
+.taskContent input[type="checkbox"]:checked::after {
+    content: "\2713";; /* Código da seta (para direita) */
+    font-size: 0.6rem;
+    color: white;
+    position: absolute;
+    rotate: 10deg;
+    transform: translate(45%, -1%);
+    opacity: 1;
+}
+
+.taskContent input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+}
+
+.taskContentinput span:hover{
+    color: var(--gray-400);
+}
+
+.taskContent button {
+    background: transparent;
+    border: 0;
+    color: var(--gray-300);
+    cursor: pointer;
+    line-height: 0;
+    border-radius: 2px;
+    
+    
+    
+}
+.taskContent button:hover {
+    color: var(--danger); 
+    background: var(--gray-400);
+    padding: 0.4rem 0.3rem;
+}
 
 /* @media (max-width: 768px) {
     .form textarea {

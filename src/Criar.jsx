@@ -1,45 +1,52 @@
-import { PlusCircle, ClipboardText } from 'phosphor-react';
-
-
-import styles from './criar.module.css'
+import { PlusCircle, ClipboardText, Trash } from 'phosphor-react';
+import styles from './criar.module.css';
 import { useState } from 'react';
 
 export function CriarTarefa() {
+    // Estado para armazenar as tarefas
+    const [tarefas, setTarefas] = useState([]);
 
-
-        // o react vai ficar de olho quando as tarefas mudarem e vai armazenar
-    const [tarefas, setTarefas] = useState([]); // tem q iniciar vazio
-
+    // Função para adicionar uma nova tarefa
     const adicionarTarefa = (event) => {
-        event.preventDefault();   // Previne o envio do formulário, o que recarregaria a página
-
-    // Obtém o valor da tarefa (no caso do seu formulário, você pode capturar o valor do textarea)
-    const novaTarefa = event.target.create.value;
-
-    // ele pegou o valor das tarefas que ja tem e vai adicionar mais
-    setTarefas([...tarefas, novaTarefa])
-
-    // Limpa o textarea após a tarefa ser adicionada
-    event.target.reset();
+        event.preventDefault(); // Previne o envio do formulário
+        
+        const novaTarefa = event.target.create.value; // Pega o valor da tarefa
+        setTarefas([...tarefas, { texto: novaTarefa, concluida: false }]); // Adiciona a tarefa com status de não concluída
+        
+        event.target.reset(); // Limpa o campo de entrada
     };
 
-return (
-    <div>
-        <div className={styles.settingsAll}>
-            <form  className={styles.form} onSubmit={adicionarTarefa}>
-                <textarea 
-                    name="create" 
-                    placeholder="Adicione uma nova tarefa"
-                    required
-                />
+    // Função para alternar o estado de concluída (marcar/desmarcar)
+    const alternarConcluida = (index) => {
+        const novasTarefas = tarefas.map((tarefa, i) =>
+            i === index ? { ...tarefa, concluida: !tarefa.concluida } : tarefa
+        );
+        setTarefas(novasTarefas); // Atualiza o estado com a tarefa alterada
+    };
 
-                <button className={styles.ButtonCriar} 
-                    type='submit'>Criar <PlusCircle 
-                    size={18}
-                    weight='bold'/></button>
-            </form>
+    // Função para excluir uma tarefa
+    const excluirTarefa = (index) => {
+        setTarefas(tarefas.filter((_, i) => i !== index)); // Remove a tarefa com base no índice
+    };
 
-            <section className={styles.tasksHeader}>
+    // Contagem de tarefas concluídas
+    const tarefasConcluidas = tarefas.filter(tarefa => tarefa.concluida).length;
+
+    return (
+        <div>
+            <div className={styles.settingsAll}>
+                <form className={styles.form} onSubmit={adicionarTarefa}>
+                    <textarea 
+                        name="create" 
+                        placeholder="Adicione uma nova tarefa"
+                        required 
+                    />
+                    <button className={styles.ButtonCriar} type="submit">
+                        Criar <PlusCircle size={18} weight="bold" />
+                    </button>
+                </form>
+
+                <section className={styles.tasksHeader}>
                     <p className={styles.colorBlue}>
                         Tarefas criadas 
                         <span className={styles.counter}>
@@ -50,42 +57,48 @@ return (
                     <p className={styles.colorPurple}>
                         Concluídas
                         <span className={styles.counter}>
-                            
+                            {`${tarefasConcluidas} de ${tarefas.length}`}
                         </span>
                     </p>
-                    
-                    
                 </section>
+
                 <div className={styles.line}></div>
+
                 {tarefas.length > 0 ? (
-                    <div>
+                    <div className={styles.containerTasks}>
                         {tarefas.map((tarefa, index) => (
-// o map ta percorrendo todo o valor do tarefas e ta retornando uma div com uma classe onde é inserido o valor da tarefa
-                        <div key={index} className={styles.task}>
-                            {tarefa}
-                        </div>
+                            <div key={index} className={styles.taskContainer}>
+                                <div className={styles.taskContent}>
+                                    <label htmlFor={`taskCheckbox-${index}`}>
+                                        <input 
+                                            onClick={() => alternarConcluida(index)} 
+                                            type="checkbox" 
+                                            id={`taskCheckbox-${index}`} 
+                                            checked={tarefa.concluida} 
+                                        />
+                                        <span 
+                                            style={{ textDecoration: tarefa.concluida ? 'line-through' : 'none' }}
+                                        >
+                                            {tarefa.texto}
+                                        </span>
+                                    </label>
+                                    <button title="Deletar tarefa" onClick={() => excluirTarefa(index)}>
+                                    <Trash size={18} />
+                                    </button>
+                                </div>
+                            </div>
                         ))}
                     </div>
-                    ) : (
-                        
+                ) : (
                     <div className={styles.dontHaveTasks}>
                         <ClipboardText size={70} />
                         <p className={styles.boldParagraph}>
-                        Você ainda não tem tarefas cadastradas
+                            Você ainda não tem tarefas cadastradas
                         </p>
                         <p>Crie tarefas e organize seus itens a fazer</p>
                     </div>
-                    )}
+                )}
             </div>
         </div>
     );
 }
-
-
-//  ao clicar essa função vai desabilitar o fundo primario
-//  taskButton.addEventListener('click', function() {
-//      if(tarefas> 0) {
-//         return disableBgTask.className.add('disabled')
- //     } // ja ta implicito que caso n tenha nenhuma ele volta ao normal
-//  })
-//  outra opção para se colocar na classe já
