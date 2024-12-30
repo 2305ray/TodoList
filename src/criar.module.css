@@ -55,6 +55,8 @@ form {
 
 
 
+
+
 /*  TASKS*/
 .tasksHeader {
     display: flex;
@@ -127,7 +129,7 @@ span {
 
 .taskContent{
 display: flex;
-background: var(--gray-);
+background: var(--gray-200);
 cursor: pointer;
 margin-top: 1rem;
 border: 0.5px solid var(--gray-400);

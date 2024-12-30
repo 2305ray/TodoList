@@ -64,23 +64,29 @@ export function CriarTarefa() {
 
                 <div className={styles.line}></div>
 
-                {tarefas.length > 0 ? (
+                {tarefas.length > 0 ? ( 
+                    // no htmlfor tem que ser associado ao id do input.
                     <div className={styles.containerTasks}>
                         {tarefas.map((tarefa, index) => (
                             <div key={index} className={styles.taskContainer}>
                                 <div className={styles.taskContent}>
-                                    <label htmlFor={`taskCheckbox-${index}`}>
+                                    <label 
+                                        htmlFor={`taskCheckbox-${index}`}> 
                                         <input 
-                                            onClick={() => alternarConcluida(index)} 
+                                            onChange={() => alternarConcluida(index)} 
                                             type="checkbox" 
                                             id={`taskCheckbox-${index}`} 
                                             checked={tarefa.concluida} 
                                         />
-                                        <span 
-                                            style={{ textDecoration: tarefa.concluida ? 'line-through' : 'none' }}
+                                       <span
+                                            style={{
+                                                textDecoration: tarefa.concluida ? 'line-through' : 'none',
+                                                color: tarefa.concluida ? 'var(--gray-300)' : 'var(--gray-200)'
+                                            }}
                                         >
                                             {tarefa.texto}
                                         </span>
+
                                     </label>
                                     <button title="Deletar tarefa" onClick={() => excluirTarefa(index)}>
                                     <Trash size={18} />
