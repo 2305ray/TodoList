@@ -1,8 +1,9 @@
 <h1 align="center"> Todo List </h1>
 
 <p align="center">
-Projeto focado na criação de cronômetros personalizados para diferentes atividades. <br>
-O objetivo é permitir que os usuários gerenciem seu tempo de forma eficiente, iniciando, pausando e resetando contadores conforme necessário.
+Projeto web para criação e controle de uma lista de tarefas. <br>
+O objetivo é permitir que os usuários organizem suas atividades de forma eficiente, 
+adicionando, concluindo e removendo tarefas conforme necessário.
 </p>
 
 
@@ -34,13 +35,10 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - **React.js** – Biblioteca para construção da interface do usuário.
 - **Vite** – Ferramenta de build rápida e otimizada para projetos React.
-- **Styled Components** – Biblioteca para estilização de componentes com CSS-in-JS.
-- **TypeScript** – Superset do JavaScript que adiciona tipagem estática e segurança ao código.
-- **Zod** – Biblioteca para validação e tipagem de dados.
+- **CSS Module** – Módulos CSS para estilização encapsulada e modular.
+- **JavaScript** – Linguagem de programação utilizada para a lógica da aplicação.
 - **Phosphor-react** – Biblioteca de ícones SVG flexível e altamente personalizável.
-- **Immer** – Facilita a manipulação imutável do estado no React, tornando o código mais simples e intuitivo.
-- **Date-fns** – Biblioteca para trabalhar com datas, permitindo cálculos e formatações eficientes.
-- **Prettier e ESLint** – Ferramentas para padronização do código, garantindo boas práticas e melhor legibilidade.
+- **ESLint** – Ferramenta para análise e padronização do código, garantindo boas práticas e melhor legibilidade.
 
 
 
@@ -50,7 +48,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 É um projeto desenvolvido pela Rocketseat no curso ReactJS do Ignite
 
-- [Layout](https://www.figma.com/community/file/1127351821076435124)
+- [Layout](https://www.figma.com/design/nB9ES1il7C99jqnEFDoqT0/ToDo-List-%E2%80%A2-Desafio-React-(Copy)?node-id=4130-112&t=BvI3VDDEOnrFtwW3-0)
 - [Rocketseat](https://www.rocketseat.com.br/)
 
   ---
@@ -59,8 +57,8 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ### 💻 **Versão Desktop**
 <div align="center">
-  <img alt="Timer Ignite home" src="https://github.com/2305ray/timer-ignite-3/blob/main/src/assets/desktop-timer-ignite.png" width="48%">
-  <img alt="timer Ignite history" src="https://github.com/2305ray/timer-ignite-3/blob/main/src/assets/desktop-timer-ignite-history.png" width="48%">
+  <img alt="todoList home" src="https://github.com/2305ray/TodoList/blob/main/img/Todo%20-%20Empty.png" width="75%">
+  <img alt="todoList tasks" src="https://github.com/2305ray/TodoList/blob/main/img/Todo.png" width="75%">
 </div>
 
 --- 
@@ -69,11 +67,11 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/2305ray/Timer-ignite.git
+   git clone https://github.com/2305ray/TodoList.git
    ```
 2. Acesse a pasta do projeto:
    ```bash
-   cd devstage
+   cd TodoList
    ```
 3. Instale as dependências:
    ```bash
