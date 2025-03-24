@@ -1,4 +1,4 @@
-<h1 align="center"> Timer Ignite </h1>
+<h1 align="center"> Todo List </h1>
 
 <p align="center">
 Projeto focado na criação de cronômetros personalizados para diferentes atividades. <br>
@@ -23,7 +23,7 @@ O objetivo é permitir que os usuários gerenciem seu tempo de forma eficiente, 
 <br>
 
 <div align="center">
-  <img alt="timer" src="https://github.com/2305ray/timer-ignite-3/blob/main/src/assets/Capa.png" width="90%">
+  <img alt="timer" src="https://github.com/2305ray/TodoList/blob/main/img/Cover%20(1).png" width="90%">
 </div>
 
    ---
