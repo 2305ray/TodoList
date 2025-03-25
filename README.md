@@ -29,7 +29,7 @@ adicionando, concluindo e removendo tarefas conforme necessário.
 
    ---
   
-## 🖥️ Tecnologias
+## 🚀 Tecnologias
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
